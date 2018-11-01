@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="look"></div>
+</body>
+<script>
+  var appVersion = JSON.stringify(window.navigator.appVersion);
+  var userAgent = JSON.stringify(window.navigator.userAgent);
+  // console.log(navigator);
+  var node = document.getElementById('look');
+  var nodeVersion = document.createElement('p');
+  nodeVersion.innerText =  'appVersion: ' + appVersion;
+  var nodeAgent = document.createElement('p');
+  nodeAgent.innerText = 'userAgent: ' + userAgent;
+  node.appendChild(nodeVersion);
+  node.appendChild(nodeAgent);
+
+  function append(text) {
+    var ele = document.createElement('p');
+    ele.innerText = text;
+    node.appendChild(ele);
+  }
+
+  var isMobile = !!userAgent.match(/AppleWebKit.*Mobile.*/);
+  append('isMobile: ' + isMobile);
+</script>
+</html>

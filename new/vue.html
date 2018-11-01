@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script> -->
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <p>{{msg}}</p>
+        <p>{{msg}}</p>
+        <p>{{num}}</p>
+        <input type="text" v-model="num">
+        <button @click="change">change</button>
+    </div>
+
+
+
+    <script>
+    var vm = new Vue({
+        el: '#app',
+        data(){
+            return {
+                msg: 'hello vue',
+                msg2: 'hello vue2',
+                num: 1
+            }
+        },
+        methods: {
+            change(){
+                // console.log(e)
+                console.log('click')
+                this.num++
+                this.msg = 'hello one'
+            }
+        },
+        watch: {
+            num(val, oldVal){
+                console.log(val,'watch')
+            }
+        },
+        created(){
+            console.log('created')
+        },
+        mounted(){
+            console.log('mounted')
+        }
+    })
+    vm.num = 444
+    </script>
+</body>
+</html>

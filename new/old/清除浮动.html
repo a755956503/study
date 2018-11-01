@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="one.js"></script>
+    <style>
+        .div0 {
+            width:200px;
+            height:200px;
+            background: red;
+        }
+        .div1 {
+            width:200px;
+            height:200px;
+            background: black;
+        }
+        .clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+        .clearfloat{zoom:1}
+        .div2 {
+            position:absolute;
+            top:0;
+            width:200px;
+            height:200px;
+            background: green;
+        }
+        .div3 {
+            float:left;
+            width:200px;
+            height:200px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div class="div0">
+</div>
+<div class="clearfloat">
+    <div class="div2">
+    </div>
+    <div class="div2">
+    </div>
+</div>
+<div class="div1">
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="kuaipai.js"></script>
+</head>
+<body>
+  <input type="text" class="length">
+  <button class="kuaipai" onclick="handleSort('kuaipai')">快速排序</button>
+  <button class="guibing" onclick="handleSort('guibing')">归并排序</button>
+  <div class="result"></div>
+  <div class="time"></div>
+  <script>
+    function handleSort(method) {
+      var lengthInput = document.getElementsByClassName('length')[0];
+      var length = parseInt(lengthInput.value) || 10;
+      const data = getData(length);
+      var result = [];
+      if (!method) {
+        method = 'kuaipai';
+      }
+      var start = new Date();
+      if (method === 'kuaipai') {
+        result = quickSort(data);
+      } else if (method === 'guibing') {
+        result = guibingSort1(data);
+      }
+      var end = new Date();
+      var time = end - start;
+      const resultDom = document.getElementsByClassName('result')[0];
+      if (result.length <= 100) {
+        resultDom.innerHTML = result;
+      }
+      var timeDom = document.getElementsByClassName('time')[0];
+      timeDom.innerHTML = time;
+    }
+  </script>
+</body>
+</html>
