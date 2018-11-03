@@ -17,4 +17,4 @@ mp/*.sln
 *.sln
 
 
-mobx-test/node_modules/
+mobx/node_modules/
