@@ -15,3 +15,6 @@ mp/*.sln
 *.ntvs*
 *.njsproj
 *.sln
+
+
+mobx-test/node_modules/
