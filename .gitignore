@@ -1,0 +1,17 @@
+mp/.DS_Store
+mp/node_modules/
+mp/npm-debug.log*
+mp/yarn-debug.log*
+mp/yarn-error.log*
+mp/.idea
+mp/*.suo
+mp/*.ntvs*
+mp/*.njsproj
+mp/*.sln
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
