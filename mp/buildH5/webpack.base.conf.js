@@ -1,7 +1,7 @@
 'use strict'
 const path = require('path')
 const utils = require('./utils')
-const config = require('../config')
+const config = require('../configH5')
 const vueLoaderConfig = require('./vue-loader.conf')
 
 function resolve (dir) {
@@ -34,7 +34,7 @@ module.exports = {
   resolve: {
     extensions: ['.web.js', '.js', '.web.vue', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      'vue$': 'vue/dist/H5/vue.esm.js',
       '@': resolve('src'),
     }
   },

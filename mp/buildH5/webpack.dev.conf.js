@@ -1,7 +1,7 @@
 'use strict'
 const utils = require('./utils')
 const webpack = require('webpack')
-const config = require('../config')
+const config = require('../configH5')
 const merge = require('webpack-merge')
 const path = require('path')
 const baseWebpackConfig = require('./webpack.base.conf')
@@ -30,14 +30,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     },
     hot: true,
     contentBase: false, // since we use CopyWebpackPlugin.
-    proxy: {
-      '/': {
-        target: 'http://localhost:8989/',
-        // target: 'http://localhost:8989/',
-        changeOrigin: true,
-        secure: false
-      },
-    },
+    // proxy: {
+    //   '/': {
+    //     target: 'http://localhost:8989/',
+    //     // target: 'http://localhost:8989/',
+    //     changeOrigin: true,
+    //     secure: false
+    //   },
+    // },
     compress: true,
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,
@@ -54,7 +54,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': require('../config/dev.env')
+      'process.env': require('../configH5/dev.env')
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
