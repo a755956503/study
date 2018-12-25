@@ -11,6 +11,7 @@
   <input type="text" class="length">
   <button class="kuaipai" onclick="handleSort('kuaipai')">快速排序</button>
   <button class="guibing" onclick="handleSort('guibing')">归并排序</button>
+  <div class="data"></div>
   <div class="result"></div>
   <div class="time"></div>
   <script>
@@ -18,18 +19,24 @@
       var lengthInput = document.getElementsByClassName('length')[0];
       var length = parseInt(lengthInput.value) || 10;
       const data = getData(length);
+      const dataDom = document.getElementsByClassName('data')[0];
+      if (data.length <= 100) {
+        dataDom.innerHTML = data;
+      }
+
       var result = [];
       if (!method) {
         method = 'kuaipai';
       }
       var start = new Date();
       if (method === 'kuaipai') {
-        result = quickSort(data);
+        result = maopaoSort(data);
       } else if (method === 'guibing') {
         result = guibingSort1(data);
       }
       var end = new Date();
       var time = end - start;
+
       const resultDom = document.getElementsByClassName('result')[0];
       if (result.length <= 100) {
         resultDom.innerHTML = result;
