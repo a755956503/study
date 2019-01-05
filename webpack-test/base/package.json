@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=development node build/start.js",
-    "build": "NODE_ENV=production node build/build.js",
+    "build": "rm -r dist/* && NODE_ENV=production node build/build.js",
     "cs": "NODE_ENV=development webpack-dev-server",
     "csno": "NODE_ENV=development webpack-dev-server --watch --hot --config build/webpack.config.noconfig.js",
     "cw": "NODE_ENV=development webpack --watch --config build/webpack.config.dev.js"
@@ -27,6 +27,7 @@
     "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.21.0",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10",
     "webpack-merge": "^4.1.5"
@@ -38,7 +39,7 @@
     ]
   },
   "dependencies": {
-    "react": "^16.6.3",
+    "react": "^16.7.0",
     "react-dom": "^16.6.3"
   }
 }

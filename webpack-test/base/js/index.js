@@ -4,8 +4,11 @@
 
 // // webapck , nginx,
 // // react native
+import React from 'react';
 import './index.css';
 import base from './base';
+import common from './common';
+console.log(common);
 // // node支持哪些es6语法。
 // new Promise((resolve) => {
 //   setTimeout(resolve(10), 10);
