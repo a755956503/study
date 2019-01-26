@@ -15,22 +15,43 @@ class AppChildChild extends Component {
   }
 }
 class AppChild extends Component {
+  componentDidMount() {
+    super.componentDidMount();
+    console.log('componentDidMount  AppChild');
+    // this.setState({
+    //   a: 1
+    // });
+  }
+  componentDidUpdate() {
+    console.log('componentDidUpdate  AppChild');
+    // this.setState({
+    //   a: 1
+    // });
+  }
   render() {
+    console.log('render AppChild')
     return (
       <div className="child">
         <span>Appchild</span>
-        <AppChildChild />
       </div>
     );
   }
 }
 class App extends Component {
   componentDidMount() {
+    console.log('componentDidMount  App');
     this.setState({
       a: 1
     });
   }
+  componentDidUpdate() {
+    console.log('componentDidUpdate  App');
+    // this.setState({
+    //   a: 1
+    // });
+  }
   render() {
+    console.log('render')
     return (
       <div className="App">
         <div className="img-con">
