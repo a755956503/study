@@ -16,7 +16,7 @@ class AppChildChild extends Component {
 }
 class AppChild extends Component {
   componentDidMount() {
-    super.componentDidMount();
+    // super.componentDidMount();
     console.log('componentDidMount  AppChild');
     // this.setState({
     //   a: 1
@@ -66,3 +66,11 @@ class App extends Component {
 export default App;
 
 // reactElement创建顺序，组件创建顺序。
+// render
+// render AppChild
+// componentDidMount  AppChild
+// componentDidMount  App
+// render
+// render AppChild
+// componentDidUpdate  AppChild
+// componentDidUpdate  App

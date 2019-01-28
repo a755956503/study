@@ -1,3 +1,6 @@
+/** 更新state
+ * 
+ */
 var ReactUpdateQueue = {
   /**
    * Checks whether or not this composite component is mounted.
