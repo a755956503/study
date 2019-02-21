@@ -658,9 +658,9 @@ var ReactCompositeComponent = {
     this._pendingReplaceState = false;
     this._pendingStateQueue = null;
 
-    if (!queue) {
-      return inst.state;
-    }
+    // if (!queue) {
+    //   return inst.state;
+    // }
 
     if (replace && queue.length === 1) {
       return queue[0];
