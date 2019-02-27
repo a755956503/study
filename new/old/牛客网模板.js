@@ -26,3 +26,38 @@ rl.on('line', function(line){ // javascript每行数据的回调接口
     cur_line = 0;
   }
 });
+function func() {
+
+}
+
+var readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal:false
+});
+
+var n = -1;
+var ans = 0;
+var cur_line = 0;
+var arr = [];
+rl.on('line', function(line){
+  if (n === -1) {
+    n = parseInt(line, 10);
+  } else {
+    arr.push(line)
+    cur_line++;
+  }
+  if (cur_line === n) {
+    ans = func();
+    n = -1;
+    cur_line = 0;
+    arr = [];
+  }
+});
+
+// 数组输出
+
+for (var i = 0; i < ans.length; i++) {
+  console.log(ans[i]);
+}
