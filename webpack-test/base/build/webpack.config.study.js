@@ -46,6 +46,9 @@ module.exports = {
             }
           ],
           publicPath: '//css.cdn.com/css' //设置被css引入的资源的地址，注意不是设置css本身的地址。
+        }),
+        use: ExtractTextPlugin.extract({
+          publicPath: '//css.cdn.com/css' //设置被css引入的资源的地址，注意不是设置css本身的地址。
         })
       },{
         test: /\.(png)$/,
