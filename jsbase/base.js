@@ -1,4 +1,4 @@
-// debounce
+// debounce 防抖
 // const debounce = function(action, delay = 1000) {
 //   let timer;
 //   return function() {
@@ -11,7 +11,7 @@
 //     }, delay);
 //   }
 // }
-// throttle 这种第一次执行时再1s后，如果一开始也需要执行一次，需要改一下。
+// throttle  节流 这种第一次执行时再1s后，如果一开始也需要执行一次，需要改一下。
 // const throttle = function(action, delay = 1000) {
 //   let timer = true;;
 //   return function() {
