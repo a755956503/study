@@ -60,7 +60,7 @@ var ReactElement = function (type, key, ref, self, source, owner, props)
 
 var element = {
   // This tag allow us to uniquely identify this as a React Element
-  $$typeof: REACT_ELEMENT_TYPE,
+  $$typeof: REACT_ELEMENT_TYPE, // $$typeof: Symbol(react.element)
 
   // Built-in properties that belong on the element
   type: type,

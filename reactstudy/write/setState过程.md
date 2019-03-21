@@ -11,6 +11,8 @@ https://blog.csdn.net/sinat_17775997/article/details/84324219
 
 # state props context分别是怎么更新的？
 
+# isBatchingUpdates是在哪里设为ture的？
+
 # setState
 
 this.updater.enqueueSetState(this, partialState);

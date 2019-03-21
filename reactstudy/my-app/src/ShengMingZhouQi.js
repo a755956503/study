@@ -105,6 +105,48 @@ class App extends Component {
   }
 }
 
+class AppDom1 extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {a: 0, b: 0}
+  }
+  componentDidMount() {
+    console.log('componentDidMount  App');
+    // this.setState({
+    //   a: 1
+    // });
+  }
+  shouldComponentUpdate() {
+    // console.log('shouldComponentUpdate  App');
+    // this.setState({
+    //   a: 2,
+    //   b: 2,
+    // });
+    return true;
+  }
+  componentWillReceiveProps() {
+    console.log('componentWillReceiveProps  App');
+    // this.setState({
+    //   a: 3,
+    //   b: 3,
+    // });
+  }
+  // componentDidUpdate() {
+  //   console.log('componentDidUpdate  App');
+  //   this.setState({
+  //     a: 1
+  //   });
+  // }
+  render() {
+    console.log('render')
+    return (
+      <div id='app'>Hello World!</div>
+    );
+  }
+}
+export {
+  AppDom1,
+}
 export default App;
 /** 生命周期相关
  * 通过state更新时，在componentWillReceiveProps，shouldComponentUpdate里setState都是无效的。
