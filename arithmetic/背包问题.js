@@ -76,3 +76,11 @@ function allBag(c, w, v) {
   }
   return f[c.length - 1][v];
 }
+
+优化后
+
+for (int i = 1; i <= n; ++i) {
+  for (int j = w[i]; j <= v; ++j) {
+      f[j] = max(f[j], f[j - c[i]] + v[i]);
+  }
+}
