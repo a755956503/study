@@ -3,6 +3,9 @@ ReactMount.render
 babale
 let app = React.createElement('div', {id: 'app'}, 'Hello World!');
 # ReactMount._renderSubtreeIntoContainer(null, nextElement, container, callback);
+function (parentComponent, nextElement, container, callback)
+nextElement: Element对象
+container: 挂载的节点
 传进去的element是已经createElement以后的对象
 返回一个component对象
 
@@ -17,6 +20,8 @@ nextWrappedElement:
 var component = ReactMount._renderNewRootComponent(
   nextWrappedElement, container, shouldReuseMarkup, nextContext)
   ._renderedComponent.getPublicInstance();
+
+nextWrappedElement： react封装了一个顶层组件，组件都在这个顶层组件下面
 ```
 # _renderNewRootComponent(nextElement, container, shouldReuseMarkup, context)
 ```javascript
@@ -101,8 +106,10 @@ component实例
 ### batchingStrategy.batchedUpdates
 isBatchingUpdates是默认值false,所以直接执行perform
 
-## batchedMountComponentIntoNode
-### mountComponentIntoNode
+### batchedMountComponentIntoNode
+
+#### ReactReconcileTransaction
+#### mountComponentIntoNode
 
 ```javascript
 var markup = ReactReconciler.mountComponent(wrapperInstance, transaction, null, ReactDOMContainerInfo(wrapperInstance, container), context, 0 /* parentDebugID */
@@ -118,14 +125,14 @@ markup = this.performInitialMount(renderedElement, hostParent, hostContainerInfo
 inst.componentWillMount();
 var markup = ReactReconciler.mountComponent(child, transaction, hostParent, hostContainerInfo, this._processChildContext(context), debugID);
 
-    // ReactCompositeComponent.mountComponent
-    markup = this.performInitialMount(renderedElement, hostParent, hostContainerInfo, transaction, context);
-
 // ReactCompositeComponent.mountComponent
+markup = this.performInitialMount(renderedElement, hostParent, hostContainerInfo, transaction, context);
+
+// ReactCompositeComponent.mountComponent    componentDidMount
 transaction.getReactMountReady().enqueue(inst.componentDidMount, inst);
 ```
 
-### mountComponent
+##### mountComponent
 
 
 

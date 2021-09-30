@@ -35,7 +35,7 @@ config = {
 }
 // 自定义组件
 
-type: 函数
+type: Component类
 type.prototype :  ReactComponent
 
 // 顺序

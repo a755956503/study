@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=development node build/start.js",
+    "serve": "webpack",
     "build": "rm -r dist/* && NODE_ENV=production node build/build.js",
     "cs": "NODE_ENV=development webpack-dev-server",
     "csno": "NODE_ENV=development webpack-dev-server --watch --hot --config build/webpack.config.noconfig.js",

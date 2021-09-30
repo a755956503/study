@@ -114,7 +114,7 @@ class Child extends Father {
     }
 }
 
-继承实现过程
+// 继承实现过程
 subClass.prototype = Object.create(superClass && superClass.prototype, {
   constructor: {
     value: subClass,

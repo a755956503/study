@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      background-color: black;
+    }
+
+    .div1 {
+      background-color: aqua;
+      width: 100px;
+      height: 100px;
+    }
+
+    .div2 {
+      background-color: red;
+      width: 100px;
+      height: 100px;
+    }
+
+    .div3 {
+      background-color: green;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div>float两个知识点: BFC的区域不会与float box重叠、计算BFC的高度时，浮动元素也参与计算</div>
+  <div class="container" style="overflow: auto;">
+    <div class="div1" style="float:left"></div>
+    <div class="div3" style="overflow: auto;"></div>
+  </div>
+  <div class="div2"></div>
+  <div>浮动</div>
+  <div class="container">
+    <div class="div1"></div>
+  </div>
+  <div class="div2"></div>
+</body>
+
+</html>

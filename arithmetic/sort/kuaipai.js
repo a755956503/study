@@ -5,6 +5,11 @@ function getData(length) {
   }
   return arr;
 }
+/** 快排
+ * 快排一般认为是不稳定的，比如 2 4 1 3 1 第一轮就把最后的1换到前面了
+ * 但是每次都新建两个数组，不在原数组里面交换就是稳定的，
+ * 但这种方式空间复杂度比较大。
+ */
 // 不要用这种方法
 function quickSort(array){
   function sort(arr) {
@@ -26,6 +31,7 @@ function quickSort(array){
   }
   return sort(array);
 }
+//两头并进，出现交换情况就换一边，这样很巧妙，但是看起来不容易看懂
 function quickSort1(array){
   function sort(prev, numsize){
     var nonius = prev;
@@ -49,6 +55,31 @@ function quickSort1(array){
       array[nonius] = flag;
       sort(0, nonius);
       sort(nonius + 1, numsize);
+    }
+  }
+  sort(0, array.length);
+  return array;
+}
+function quickSort2(array){
+  function sort(prev, numsize){
+    var nonius = prev + 1;
+    var j = numsize -1;
+    var flag = array[prev];
+    if (numsize - 1 > prev) {
+      while(nonius <= j) {
+        if (array[nonius] > flag) {
+          let midNum = array[nonius];
+          array[nonius] = array[j];
+          array[j] = midNum;
+          j--;
+        } else {
+          array[nonius - 1] = array[nonius];
+          nonius++;
+        }
+      }
+      array[nonius - 1] = flag;
+      sort(0, nonius - 1);
+      sort(nonius, numsize);
     }
   }
   sort(0, array.length);

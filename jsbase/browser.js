@@ -1,5 +1,5 @@
 /** ajax */
-
+// 异步同步，返回类型，设置header，取响应header。
 function ajax(data) {
   var xmlHttpRequest = new XMLHttpRequest();
   try {

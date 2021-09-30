@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>page1</title>
+  <style>
+    .iframe {
+      width: 100%;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div>parent</div>
+  <script>
+    // sessionStorage.setItem('parent', '1');
+    // document.cookie = 'parent1=1';
+    // document.cookie = 'parent2=2';
+    console.log('page1');
+    console.log('window.top', window.self);
+    console.log('sessionStorage1', sessionStorage.getItem('sessionStorage1'));
+    console.log('localStorage1', sessionStorage.getItem('localStorage1'));
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    document.cookie="key1=1;samesite=None;secure=true";
+    // document.cookie="key1=1;";
+  </script>
+  <div>
+    <form action="https://mcs.snssdk.com/v1/list/">
+      <input name="name" />
+      <button type="submit">发送跨域表单</button>
+    </form>
+  </div>
+  <div>
+    <button onclick="send()">发送跨域请求</button>
+    <button onclick="send1()">发送异源同站请求</button>
+  </div>
+  <script>
+    function send() {
+      var xhr = new XMLHttpRequest();
+      // xhr.open("GET", "https://mcs.snssdk.com/v1/list", true);
+      xhr.open("GET", "https://127.0.0.1:3000/", true);
+      // xhr.open("POST", "http://127.0.0.1:8080/js/app.js", true);
+      // xhr.withCredentials = true; //支持跨域发送cookies
+      xhr.send();
+    }
+    function send1() {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://localhost:3000/", true);
+      // xhr.open("GET", "https://127.0.0.1:8888/", true);
+      // xhr.open("POST", "http://127.0.0.1:8080/js/app.js", true);
+      xhr.withCredentials = true; //支持跨域发送cookies
+      xhr.send();
+    }
+  </script>
+</body>
+</html>

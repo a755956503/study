@@ -40,16 +40,31 @@
 
 
 //  原型，原型链
-function funa() {
-  this.a = 1;
-}
-funa.prototype.b = 2;
-var a = new funa();
+// function funa() {
+//   this.a = 1;
+// }
+// funa.prototype.b = 2;
+// var a = new funa();
 
 
-let arr = [];
+// let arr = [];
 // for (key in a) {
 //   arr.push(key);
-// }
-arr = Object.keys(a);
-console.log(arr);
+// }a
+// arr = Object.keys(a);
+// console.log(arr);
+
+// 继承
+function SuperType(){
+  this.colors = [ 'red', 'blue'];
+};
+SuperType.prototype.funca = function(){}
+
+function SubType(){
+}
+
+SubType.prototype = new SuperType();
+
+a = new SubType();
+a.colors.push('green');
+b = new SubType();
