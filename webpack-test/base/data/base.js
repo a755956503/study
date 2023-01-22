@@ -1,14 +1,4 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else if(typeof exports === 'object')
-		exports["main"] = factory();
-	else
-		root["main"] = factory();
-})(window, function() {
-return /******/ (function(modules) { // webpackBootstrap
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -91,22 +81,33 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/base/index.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/******/ ({
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "encrypt", function() { return encrypt; });
-function encrypt(str) {
-  return str + '1';
-}
+/***/ "./src/base/index.js":
+/*!***************************!*\
+  !*** ./src/base/index.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-
-
-/***/ })
-/******/ ]);
-});
+  "use strict";
+  eval("\n\nvar lib = __webpack_require__(/*! ./lib */ \"./src/base/lib.js\");\nconsole.log(lib.encrypt('xxx'));\n\n//# sourceURL=webpack:///./src/base/index.js?");
+  
+  /***/ }),
+  
+  /***/ "./src/base/lib.js":
+  /*!*************************!*\
+    !*** ./src/base/lib.js ***!
+    \*************************/
+  /*! no static exports found */
+  /***/ (function(module, exports, __webpack_require__) {
+  
+  "use strict";
+  eval("\n\nfunction encrypt(str) {\n  return str + '1';\n}\nmodule.exports = {\n  encrypt: encrypt\n};\n\n//# sourceURL=webpack:///./src/base/lib.js?");
+  
+  /***/ })
+  
+  /******/ });

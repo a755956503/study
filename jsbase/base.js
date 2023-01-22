@@ -98,19 +98,19 @@
 /** 对象属性，本身属性，继承属性
  * 
  */
-function classA () {
-  this.ca = 1;
-}
-classA.prototype.cb = 2
-var a = new classA();
-a.a = 1;
-var s = Symbol();
-a[s] = 'aa';
+// function classA () {
+//   this.ca = 1;
+// }
+// classA.prototype.cb = 2
+// var a = new classA();
+// a.a = 1;
+// var s = Symbol();
+// a[s] = 'aa';
 
-// 不设的都是false，用xx.xx创建的，默认都是true
-Object.defineProperty(a, 'da', {
-  value: '11',
-});
+// // 不设的都是false，用xx.xx创建的，默认都是true
+// Object.defineProperty(a, 'da', {
+//   value: '11',
+// });
 
 // Object.defineProperty(a, 'da', {
 //   configurable: true,
@@ -125,11 +125,11 @@ Object.defineProperty(a, 'da', {
 // });
 // delete a.da;
 // getOwnPropertyDescriptor只能获取自身的
-console.log('getOwnPropertyDescriptor自身a', Object.getOwnPropertyDescriptor(a, 'a'));
+// console.log('getOwnPropertyDescriptor自身a', Object.getOwnPropertyDescriptor(a, 'a'));
 // getOwnPropertyDescriptor自身a {value: 1, writable: true, enumerable: true, configurable: true}
-console.log('getOwnPropertyDescriptor自身da', Object.getOwnPropertyDescriptor(a, 'da'));
+// console.log('getOwnPropertyDescriptor自身da', Object.getOwnPropertyDescriptor(a, 'da'));
 // getOwnPropertyDescriptor自身da {value: "11", writable: false, enumerable: false, configurable: false}
-console.log('getOwnPropertyDescriptor继承cb', Object.getOwnPropertyDescriptor(a, 'cb'));
+// console.log('getOwnPropertyDescriptor继承cb', Object.getOwnPropertyDescriptor(a, 'cb'));
 // getOwnPropertyDescriptor继承cb undefined
 // da.enumerable = true;
 // defineProperty
@@ -139,24 +139,39 @@ console.log('getOwnPropertyDescriptor继承cb', Object.getOwnPropertyDescriptor(
 // Object.defineProperty(a, 'da', {value: '33'})
 // 常用的get,set就不说了 =》 当使用了getter或setter方法，不允许使用writable和value这两个属性(如果使用，会直接报错滴)
 
-// 记忆 对象自身3+1+2 keys getOwnPropertyNames ownKeys  + getOwnPropertySymbols in .
-console.log('Object.keys(a)', Object.keys(a)); // 对象自身的可枚举属性
-console.log('Object.getOwnPropertyNames(a)', Object.getOwnPropertyNames(a)); // 对象自身的可枚举属性，不可枚举属性
+function ObjectKeys() {
+  // 记忆 4+2 keys getOwnPropertyNames ownKeys getOwnPropertySymbols 和 in .
+  console.log('Object.keys(a)', Object.keys(a)); // 对象自身的可枚举属性
 
-console.log('a.ca, a.cb', a.ca, a.cb); // 和 in 一样
-console.log('ca in a, cb in a', 'ca' in a, 'cb' in a); // 对象自身 和 继承 的可枚举属性
+  // getOwnPropertyNames
+  console.log('Object.getOwnPropertyNames(a)', Object.getOwnPropertyNames(a)); // 对象自身的可枚举属性，不可枚举属性
+  Object.getOwnPropertyNames(Function) // ['length', 'name', 'prototype']
+  
 
-console.log('Object.getOwnPropertySymbols(a);', Object.getOwnPropertySymbols(a)); // 对象自身的Symbol属性
-console.log('Reflect.ownKeys(a)', Reflect.ownKeys(a)); // 对象自身的可枚举属性，不可枚举属性，Symbo属性
+  console.log('a.ca, a.cb', a.ca, a.cb); // 和 in 一样
+  console.log('ca in a, cb in a', 'ca' in a, 'cb' in a); // 对象自身 和 继承 的可枚举属性
 
-var arr = [1];
-console.log(Object.keys(arr));
-console.log(arr.length);
-console.log('length' in arr);
-console.log(Object.getOwnPropertyNames(arr));
+  console.log('Object.getOwnPropertySymbols(a);', Object.getOwnPropertySymbols(a)); // 对象自身的Symbol属性
+  console.log('Reflect.ownKeys(a)', Reflect.ownKeys(a)); // 对象自身的可枚举属性，不可枚举属性，Symbo属性
 
-// length 和__proto__
-// bject.getOwnPropertyDescriptor(xx, 'length')
-// {value: 0, writable: true, enumerable: false, configurable: false}value: 0writable: trueenumerable: falseconfigurable: false__proto__: Object
-// Object.getOwnPropertyDescriptor(xx, '__proto__')
-// undefined
+  // var arr = [1];
+  // console.log(Object.keys(arr));
+  // console.log(arr.length);
+  // console.log('length' in arr);
+  // console.log(Object.getOwnPropertyNames(arr));
+
+  // length 和__proto__
+  // bject.getOwnPropertyDescriptor(xx, 'length')
+  // {value: 0, writable: true, enumerable: false, configurable: false}value: 0writable: trueenumerable: falseconfigurable: false__proto__: Object
+  // Object.getOwnPropertyDescriptor(xx, '__proto__')
+  // undefined
+
+  // hasOwnProperty
+  // function Fun() {}
+  // var f = new Fun();
+  // Object.defineProperty(f, 'var1', { enumerable: false });
+  // console.log('hasOwnProperty noEnumerable', f.hasOwnProperty('var1'));
+  // var s = Symbol();
+  // f[s] = 'xxx';
+  // console.log('hasOwnProperty Symbol', f.hasOwnProperty(s));
+}

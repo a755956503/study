@@ -91,22 +91,21 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/base/lib.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/******/ ({
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "encrypt", function() { return encrypt; });
-function encrypt(str) {
-  return str + '1';
-}
+/***/ "./src/base/lib.js":
+/*!*************************!*\
+  !*** ./src/base/lib.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-
+eval("function encrypt(str) {\n  return str + '1';\n}\n\nmodule.exports = {\n  encrypt: encrypt\n};\n\n//# sourceURL=webpack://%5Bname%5D/./src/base/lib.js?");
 
 /***/ })
-/******/ ]);
+
+/******/ });
 });
