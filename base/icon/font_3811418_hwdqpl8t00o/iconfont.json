@@ -1,0 +1,23 @@
+{
+  "id": "3811418",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "33177957",
+      "name": "E入库(堆箱入库)",
+      "font_class": "a-Erukuduixiangruku",
+      "unicode": "e6f8",
+      "unicode_decimal": 59128
+    },
+    {
+      "icon_id": "33228144",
+      "name": "nav_icon_收起",
+      "font_class": "nav_icon_shouqi",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    }
+  ]
+}

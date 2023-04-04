@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iframe</title>
+  <style>
+    .iframe {
+      width: 100%;
+      height: 100px;
+    }
+  </style>
+  <script>
+    document.cookie="frameKey=1;samesite=None;secure=true";
+    // document.cookie="key1=1;";
+  </script>
+</head>
+<body>
+  <script>
+    sessionStorage.setItem('sessionStorage1', 'sessionStorage1');
+    sessionStorage.setItem('localStorage1', 'localStorage1');
+  </script>
+  <div>parente</div>
+  <script>
+    sessionStorage.setItem('parent', '1');
+    document.cookie = 'parent1=1;domain=test.com;path=/test';
+    document.cookie = 'parent2=2;domain=test.com;';
+  </script>
+  <iframe referrerpolicy="no-referrer-when-downgrade" name="iframe1" src="/child.html" class="iframe"></iframe>
+  <iframe referrerpolicy="no-referrer-when-downgrade" name="iframe2" src="https://www.b.test.com:8081" class="iframe" ></iframe>
+</body>
+</html>
